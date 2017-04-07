@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Text to speech</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body ng-app="TTSApp">
+    <h1>Text to speech</h1>
+    <div ng-controller="TTSAppController as TTS">
+      <form name="validate" novalidate>
+        Enter text:
+        <input type="text" name="text" placeholder="Enter text" ng-model=
+        "TTS.text" required>
+        <button ng-click="TTS.talk();" ng-disabled="validate.$invalid">Speak!
+        </button>
+        <span class="red" ng-if="validate.text.$error.required && validate.text.$touched">
+        Text required</span><br>
+        <h3>{{TTS.text}}</h3>
+      </form>
+    </div>
+    <script src="lib/angular.min.js" charset="utf-8"></script>
+    <script src="TTS.js" charset="utf-8"></script>
+  </body>
+</html>
