@@ -9,7 +9,10 @@
     <h1>Text to speech</h1>
     <div ng-controller="TTSAppController as TTS">
       <form name="validate" novalidate>
-        Enter text:
+        <div ng-mouseup="TTS.keyPress()">
+          The Web Speech API adds voice recognition (speech to text) and speech synthesis (text to speech) to JavaScript
+        </div>
+        <br><br>Enter text:
         <input type="text" name="text" placeholder="Enter text" ng-model=
         "TTS.text" required>
         <button ng-click="TTS.talk();" ng-disabled="validate.$invalid">Speak!
