@@ -17,6 +17,8 @@
         "TTS.text" required>
         <button ng-click="TTS.talk();" ng-disabled="validate.$invalid">Speak!
         </button>
+        <button ng-click="TTS.pause()">Pause</button><button ng-click="TTS.resume()">Resume</button>
+        <button ng-click="TTS.cancel()">Cancel</button>
         <span class="red" ng-if="validate.text.$error.required && validate.text.$touched">
         Text required</span><br>
         <h3>{{TTS.text}}</h3>
