@@ -40,6 +40,7 @@ function TTSAppService($http) {
 
   service.talk = function (text) {
     var msg = new SpeechSynthesisUtterance(text);
+    console.log(speechSynthesis.getVoices());
     msg.voice = speechSynthesis.getVoices()[3];
     speechSynthesis.speak(msg);
   };
